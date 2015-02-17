@@ -1,0 +1,94 @@
+<form class="form-horizontal" name="frmAdd" novalidate ng-controller="addCtrl">
+  <legend>Nova Igreja</legend>
+  <div class="control-group">
+    <label class="control-label" for="nome">Nome</label>
+    <div class="controls">
+      <input type="text" name="nome" placeholder="Nome da igreja" class='input-xlarge' ng-model="nome" ng-pattern="/^[A-Za-z]+(?:[\s-][A-Za-z]+)*$/" required>
+      <br/><span class="label label-error" ng-show="frmAdd.nome.$error.pattern">Use apenas letras</span>
+      <span class="label label-error" ng-show="frmAdd.nome.$error.required">requirido</span>
+      <input type='hidden' class='input' ng-model="id"/>
+    </div>
+  </div>
+  <div class="control-group">
+    <label class="control-label" for="nome">Descricao</label>
+    <div class="controls">
+      <input type="text" name="descricao" placeholder="Descricao da igreja" class='input-xlarge' ng-model="descricao" ng-pattern="/^[A-Za-z]+(?:[\s-][A-Za-z]+)*$/" required>
+      <br/><span class="label label-error" ng-show="frmAdd.descricao.$error.pattern">Use apenas letras</span>
+      <input type='hidden' class='input' ng-model="id"/>
+    </div>
+  </div>
+  <div class="control-group">
+    <label class="control-label" for="endereco">Endereco</label>
+    <div class="controls">
+      <input type="text" name="endereco" placeholder="Endereco" class='input-xlarge' ng-model="endereco" required>
+      <br/><span class="label label-error" ng-show="frmAdd.endereco.$error.required">requirido</span>
+      <input type='hidden' class='input' ng-model="id"/>
+    </div>
+  </div>
+  <div class="control-group">
+    <label class="control-label" for="bairro">Bairro</label>
+    <div class="controls">
+      <input type="text" name="bairro" placeholder="bairro" class='input-xlarge' ng-model="bairro" required>
+      <br/><span class="label label-error" ng-show="frmAdd.bairro.$error.required">requirido</span>
+      <input type='hidden' class='input' ng-model="id"/>
+    </div>
+  </div>
+  <div class="control-group">
+    <label class="control-label" for="cidade">Cidade</label>
+    <div class="controls">
+      <input type="text" name="cidade" placeholder="Cidade" class='input-xlarge' ng-model="cidade" required>
+      <br/><span class="label label-error" ng-show="frmAdd.cidade.$error.required">requirido</span>
+      <input type='hidden' class='input' ng-model="id"/>
+    </div>
+  </div>
+  <div class="control-group">
+    <label class="control-label" for="uf">UF</label>
+    <div class="controls">
+      <input type="text" name="uf" placeholder="uf" class='input-xlarge' ng-model="uf" required>
+      <br/><span class="label label-error" ng-show="frmAdd.uf.$error.required">requirido</span>
+      <input type='hidden' class='input' ng-model="id"/>
+    </div>
+  </div>
+  <div class="control-group">
+    <label class="control-label" for="cep">Cep</label>
+    <div class="controls">
+      <input type="text" name="cep" placeholder="CEP" class='input-xlarge' ng-model="cep" required>
+      <input type='hidden' class='input' ng-model="id"/>
+    </div>
+  </div>
+  <div class="control-group">
+    <label class="control-label" for="responsavel">Responsavel</label>
+    <div class="controls">
+      <input type="text" name="responsavel" placeholder="Responsavel" class='input-xlarge' ng-model="responsavel" required>
+      <input type='hidden' class='input' ng-model="id"/>
+    </div>
+  </div>
+  <div class="control-group">
+    <label class="control-label" for="email">Email</label>
+    <div class="controls">
+      <input type="email" name="email" placeholder="Email" class='input-xlarge' ng-model="email" required>
+      <br/><span class="label label-error" ng-show="frmAdd.email.$error.required">required</span>
+      <span class="label label-error" ng-show="frmAdd.email.$error.email">Please enter valid email</span>
+    </div>
+  </div>
+  <div class="control-group">
+    <label class="control-label" for="telefone">Telefone</label>
+    <div class="controls">
+      <input type="text" name="telefone" placeholder="Telefone" class='input-medium' ng-model="telefone" ng-pattern="/^[0-9]+$/">
+      <br/><span class="label label-error" ng-show="frmAdd.telefone.$error.pattern">Use apenas numeros</span>
+    </div>
+  </div>
+  <div class="control-group">
+    <label class="control-label" for="idpagamento">Pagamento</label>
+    <div class="controls">
+      <input type="text" name="idpagamento" placeholder="ID de pagamento" class='input-xlarge' ng-model="idpagamento" required>
+      <input type='hidden' class='input' ng-model="id"/>
+    </div>
+  </div>
+  <div class="control-group">
+    <div class="controls">
+      <button type="submit" class="btn btn-primary" ng-click="save()">Gravar</button>
+      <span class="label label-info {{msg || 'hide'}}">{{msg}}</span>
+    </div>
+  </div>
+</form>
